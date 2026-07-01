@@ -1,0 +1,353 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <title>Speech Enhancement Demo - MAGE</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Viet Muong Speech Translation
+          </h1>
+
+          <!-- Action Buttons -->
+          <div class="hero-buttons">
+            <a href="#demo" class="btn btn-primary">
+              <i class="fas fa-play"></i>
+              Demo
+            </a>
+            <a href="coming-soon.html" class="btn btn-outline">
+              <i class="fab fa-github"></i>
+              Code
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Demo Section -->
+    <section id="demo" class="demo-section">
+      <div class="demo-container">
+        <h2 class="section-title animate">Audio Samples Demo</h2>
+        
+        <!-- Experiments will be dynamically loaded here -->
+        <div id="experiments-container" class="experiments-container"><div class="experiment">
+        <h3 class="experiment-title">In-domain test set</h3>
+        <!-- <p class="experiment-description">Consist of sentences collected from news sources.</p> -->
+        <div class="table-container">
+            <table class="samples-table">
+                <thead>
+                    <tr>
+                        <th>Sample</th><th>Text</th><th>Reference Audio</th><th>Generated Audio</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+            <tr>
+                <td class="sample-index" data-label="Sample">1</td>
+        
+                <td data-label="Text">
+                    <p>hội liên hiệp phụ nữ các huyện đã phát động trồng hoa tại khuôn viên nhà văn hóa trồng hoa ven đường</p>
+                </td>
+            
+                <td data-label="Ref Audio">
+                    <div class="audio-item">
+                        <div class="audio-label ground-truth"></div>
+                        <div class="audio-player">
+                            <audio controls="" data-sample="001" data-model="gt" data-audio-path="./sample/in-domain/gt/001.wav">
+                                <source src="./sample/in-domain/gt/001.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <button class="show-spec-btn">›</button>
+                        </div>
+                        
+                        <div class="spectrogram-container" style="display:none;">
+                            <div class="spectrogram-label">Spectrogram</div>
+                            <img
+                                src="./spectrogram/in-domain/gt/001.png"
+                                alt="Spectrogram"
+                                class="spectrogram-image"
+                            >
+                        </div>
+
+                    </div>
+                </td>
+
+                <td data-label="Gen Audio">
+                    <div class="audio-item">
+                        <div class="audio-label gen"></div>
+                        <div class="audio-player">
+                            <audio controls="" data-sample="001" data-model="infer" data-audio-path="./sample/in-domain/infer/001.wav">
+                                <source src="./sample/in-domain/infer/001.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <button class="show-spec-btn">›</button>
+                        </div>
+                        
+                        <div class="spectrogram-container" style="display:none;">
+                            <div class="spectrogram-label">Spectrogram</div>
+                            <img
+                                src="./spectrogram/in-domain/infer/001.png"
+                                alt="Spectrogram"
+                                class="spectrogram-image"
+                            >
+                        </div>
+
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="sample-index" data-label="Sample">2</td>
+        
+                <td data-label="Text">
+                    <p>phú thọ đã chủ động điều tra cập nhật dữ liệu biến động về nhu cầu sử dụng lao động</p>
+                </td>
+            
+                <td data-label="Ref Audio">
+                    <div class="audio-item">
+                        <div class="audio-label ground-truth"></div>
+                        <div class="audio-player">
+                            <audio controls="" data-sample="002" data-model="gt" data-audio-path="./sample/in-domain/gt/002.wav">
+                                <source src="./sample/in-domain/gt/002.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <button class="show-spec-btn">›</button>
+                        </div>
+                        
+                        <div class="spectrogram-container" style="display:none;">
+                            <div class="spectrogram-label">Spectrogram</div>
+                            <img
+                                src="./spectrogram/in-domain/gt/002.png"
+                                alt="Spectrogram"
+                                class="spectrogram-image"
+                            >
+                        </div>
+
+                    </div>
+                </td>
+
+                <td data-label="Gen Audio">
+                    <div class="audio-item">
+                        <div class="audio-label gen"></div>
+                        <div class="audio-player">
+                            <audio controls="" data-sample="002" data-model="infer" data-audio-path="./sample/in-domain/infer/002.wav">
+                                <source src="./sample/in-domain/infer/002.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <button class="show-spec-btn">›</button>
+                        </div>
+                        
+                        <div class="spectrogram-container" style="display:none;">
+                            <div class="spectrogram-label">Spectrogram</div>
+                            <img
+                                src="./spectrogram/in-domain/infer/002.png"
+                                alt="Spectrogram"
+                                class="spectrogram-image"
+                            >
+                        </div>
+
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="sample-index" data-label="Sample">3</td>
+        
+                <td data-label="Text">
+                    <p>thành lập tổ liên gia tự quản điểm chưa cháy công cộng hay mô hình mỗi gia đình tự trang bị bình chữa cháy</p>
+                </td>
+            
+                <td data-label="Ref Audio">
+                    <div class="audio-item">
+                        <div class="audio-label ground-truth"></div>
+                        <div class="audio-player">
+                            <audio controls="" data-sample="003" data-model="gt" data-audio-path="./sample/in-domain/gt/003.wav">
+                                <source src="./sample/in-domain/gt/003.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <button class="show-spec-btn">›</button>
+                        </div>
+                        
+                        <div class="spectrogram-container" style="display:none;">
+                            <div class="spectrogram-label">Spectrogram</div>
+                            <img
+                                src="./spectrogram/in-domain/gt/003.png"
+                                alt="Spectrogram"
+                                class="spectrogram-image"
+                            >
+                        </div>
+
+                    </div>
+                </td>
+
+                <td data-label="Gen Audio">
+                    <div class="audio-item">
+                        <div class="audio-label gen"></div>
+                        <div class="audio-player">
+                            <audio controls="" data-sample="003" data-model="infer" data-audio-path="./sample/in-domain/infer/003.wav">
+                                <source src="./sample/in-domain/infer/003.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <button class="show-spec-btn">›</button>
+                        </div>
+                        
+                        <div class="spectrogram-container" style="display:none;">
+                            <div class="spectrogram-label">Spectrogram</div>
+                            <img
+                                src="./spectrogram/in-domain/infer/003.png"
+                                alt="Spectrogram"
+                                class="spectrogram-image"
+                            >
+                        </div>
+
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="sample-index" data-label="Sample">4</td>
+        
+                <td data-label="Text">
+                    <p>phát triển mạnh cây chè gắn với công nghiệp chế biến</p>
+                </td>
+            
+                <td data-label="Ref Audio">
+                    <div class="audio-item">
+                        <div class="audio-label ground-truth"></div>
+                        <div class="audio-player">
+                            <audio controls="" data-sample="004" data-model="gt" data-audio-path="./sample/in-domain/gt/004.wav">
+                                <source src="./sample/in-domain/gt/004.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <button class="show-spec-btn">›</button>
+                        </div>
+                        
+                        <div class="spectrogram-container" style="display:none;">
+                            <div class="spectrogram-label">Spectrogram</div>
+                            <img
+                                src="./spectrogram/in-domain/gt/004.png"
+                                alt="Spectrogram"
+                                class="spectrogram-image"
+                            >
+                        </div>
+
+                    </div>
+                </td>
+
+                <td data-label="Gen Audio">
+                    <div class="audio-item">
+                        <div class="audio-label gen"></div>
+                        <div class="audio-player">
+                            <audio controls="" data-sample="004" data-model="infer" data-audio-path="./sample/in-domain/infer/004.wav">
+                                <source src="./sample/in-domain/infer/004.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <button class="show-spec-btn">›</button>
+                        </div>
+                        
+                        <div class="spectrogram-container" style="display:none;">
+                            <div class="spectrogram-label">Spectrogram</div>
+                            <img
+                                src="./spectrogram/in-domain/infer/004.png"
+                                alt="Spectrogram"
+                                class="spectrogram-image"
+                            >
+                        </div>
+
+                    </div>
+                </td>
+            </tr>
+                </tbody>
+            </table>
+        </div>
+    </div><div class="experiment">
+        <h3 class="experiment-title">Out-domain Test Set</h3>
+        <!-- <p class="experiment-description">Real-world recorded audio samples with background noise, comparing different enhancement methods.</p> -->
+        <div class="table-container">
+            <table class="samples-table">
+                <thead>
+                    <tr>
+                        <th>Sample</th><th>Text</th><th>Audio</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+            <tr>
+                <td class="sample-index" data-label="Sample">1</td>
+        
+                <td data-label="Text">
+                    <p>cuộc hẹn hôm nay được chuyển sang buổi chiều vì có một vài thay đổi</p>
+                </td>
+            
+                <td data-label="Gen Audio">
+                    <div class="audio-item">
+                        <div class="audio-label gen"></div>
+                        <div class="audio-player">
+                            <audio controls="" data-sample="001" data-model="infer" data-audio-path="./sample/out-domain/001.wav">
+                                <source src="./sample/out-domain/001.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <button class="show-spec-btn">›</button>
+                        </div>
+                        
+                        <div class="spectrogram-container" style="display:none;">
+                            <div class="spectrogram-label">Spectrogram</div>
+                            <img
+                                src="./spectrogram/out-domain/001.png"
+                                alt="Spectrogram"
+                                class="spectrogram-image"
+                            >
+                        </div>
+
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="sample-index" data-label="Sample">2</td>
+        
+                <td data-label="Text">
+                    <p>căn phòng mới được sắp xếp lại nên trông rộng rãi và gọn gàng hơn</p>
+                </td>
+            
+                <td data-label="Gen Audio">
+                    <div class="audio-item">
+                        <div class="audio-label gen"></div>
+                        <div class="audio-player">
+                            <audio controls="" data-sample="002" data-model="infer" data-audio-path="./sample/out-domain/002.wav">
+                                <source src="./sample/out-domain/002.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <button class="show-spec-btn">›</button>
+                        </div>
+                        
+                        <div class="spectrogram-container" style="display:none;">
+                            <div class="spectrogram-label">Spectrogram</div>
+                            <img
+                                src="./spectrogram/out-domain/002.png"
+                                alt="Spectrogram"
+                                class="spectrogram-image"
+                            >
+                        </div>
+
+                    </div>
+                </td>
+            </tr>
+                </tbody>
+            </table>
+        </div>
+    </div></div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+  
+
+</body></html>
