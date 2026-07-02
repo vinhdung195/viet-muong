@@ -2,7 +2,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.png" type="image/png">
-    <title>Speech Enhancement Demo - MAGE</title>
+    <title>Viet Muong Speech Translation</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -34,13 +34,11 @@
     <section id="demo" class="demo-section">
       <div class="demo-container">
         <h2 class="section-title animate">Audio Samples Demo</h2>
-        
-        <!-- Experiments will be dynamically loaded here -->
+
         <div id="experiments-container" class="experiments-container"><div class="experiment">
         <h3 class="experiment-title">In-domain test set</h3>
-        <!-- <p class="experiment-description">Consist of sentences collected from news sources.</p> -->
         <div class="table-container">
-            <table class="samples-table">
+            <table class="samples-table in">
                 <thead>
                     <tr>
                         <th>Sample</th><th>Text</th><th>Reference Audio</th><th>Generated Audio</th>
@@ -203,7 +201,6 @@
                                 class="spectrogram-image"
                             >
                         </div>
-
                     </div>
                 </td>
             </tr>
@@ -265,16 +262,14 @@
         </div>
     </div><div class="experiment">
         <h3 class="experiment-title">Out-domain Test Set</h3>
-        <!-- <p class="experiment-description">Real-world recorded audio samples with background noise, comparing different enhancement methods.</p> -->
         <div class="table-container">
-            <table class="samples-table">
+            <table class="samples-table out">
                 <thead>
                     <tr>
                         <th>Sample</th><th>Text</th><th>Audio</th>
                     </tr>
                 </thead>
                 <tbody>
-    
             <tr>
                 <td class="sample-index" data-label="Sample">1</td>
         
@@ -331,7 +326,6 @@
                                 class="spectrogram-image"
                             >
                         </div>
-
                     </div>
                 </td>
             </tr>
@@ -341,6 +335,80 @@
     </div></div>
       </div>
     </section>
+    <!-- Live Demo Section -->
+    <section id="live-demo" class="live-demo-section">
+      <div class="live-demo-container">
+        <h2 class="section-title animate">Live Demo</h2>
+
+        <!-- Demo Interface -->
+        <div class="demo-interface">
+          <div class="text-input-box">
+            <textarea
+                id="textInput"
+                placeholder="Type your content here..."
+                rows="4"
+            ></textarea>
+          </div>
+
+          <!-- Recording Tab -->
+          <div class="tab-content active" id="generation-tab">
+            <div class="genteatation-interface">
+              <div class="generation-controls">
+                <button id="process-audio" class="btn btn-primary">
+                  <i class="fas fa-magic"></i>
+                    Generate
+                </button>
+                <button id="clear-all" class="btn btn-outline">
+                  <i class="fas fa-trash"></i>
+                    Clear
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <!-- Processing Status -->
+          <div class="processing-status" id="processing-status" style="display: none">
+            <div class="loading-spinner">
+              <i class="fas fa-spinner fa-spin"></i>
+            </div>
+            <div class="status-text">
+              <h4>Processing...</h4>
+              <p>
+                This may take a few moments. Please wait.
+              </p>
+              <div class="progress-bar">
+                <div class="progress-fill"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Results -->
+          <div class="demo-results" id="demo-results" style="display: none">
+              <div class="result-item">
+                <audio id="result" controls=""></audio>
+                <button class="btn btn-outline download-btn" id="download">
+                  <i class="fas fa-download"></i>
+                  Download
+                </button>
+              </div>
+          </div>
+
+          <!-- Error Display -->
+          <div class="demo-error" id="demo-error" style="display: none">
+            <div class="error-content">
+              <i class="fas fa-exclamation-circle"></i>
+              <h4>Processing Error</h4>
+              <p id="error-message"></p>
+              <button class="btn btn-outline" onclick="resetDemo()">
+                <i class="fas fa-redo"></i>
+                Try Again
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -348,6 +416,5 @@
 
     <!-- Scripts -->
     <script src="script.js"></script>
-  
 
 </body></html>

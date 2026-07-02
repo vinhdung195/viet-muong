@@ -1,0 +1,39 @@
+import librosa
+import librosa.display
+import matplotlib.pyplot as plt
+import numpy as np
+
+audio_path = "001.wav"
+
+# Load audio
+y, sr = librosa.load(audio_path, sr=16000)
+
+# Mel Spectrogram
+S = librosa.feature.melspectrogram(
+    y=y,
+    sr=sr,
+    n_fft=1024,
+    hop_length=256,
+    n_mels=128
+)
+
+S_db = librosa.power_to_db(S, ref=np.max)
+
+# Vẽ ảnh
+plt.figure(figsize=(9, 3))
+plt.axis("off")
+
+librosa.display.specshow(
+    S_db,
+    sr=sr,
+    cmap="viridis",      # hoặc "viridis", "magma"
+)
+
+plt.tight_layout(pad=0)
+plt.savefig(
+    "spectrogram.png",
+    bbox_inches="tight",
+    pad_inches=0,
+    dpi=128
+)
+plt.close()
